@@ -33,7 +33,7 @@ export default function OnboardingPage() {
     }).eq('id', session.user.id)
 
     // 2. Vault API Keys
-    await supabase.from('user_keys').insert({
+    await supabase.from('user_keys_public').insert({
       user_id: session.user.id,
       binance_public_key: formData.pubKey,
       binance_secret_key: formData.secKey
