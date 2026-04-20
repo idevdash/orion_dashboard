@@ -1,0 +1,12 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="80" fill="#20232A"/>
+  <rect x="0" y="78" width="600" height="2" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="40" cy="52" r="7" fill="#22C55E"/>
+  <circle cx="62" cy="38" r="7" fill="#22C55E"/>
+  <circle cx="84" cy="24" r="7" fill="#22C55E"/>
+  <line x1="47" y1="50" x2="55" y2="40" stroke="rgba(34,197,94,0.25)" stroke-width="1.5"/>
+  <line x1="69" y1="36" x2="77" y2="26" stroke="rgba(34,197,94,0.25)" stroke-width="1.5"/>
+  <text x="100" y="56" font-family="-apple-system,'SF Pro Display','Inter',sans-serif" font-size="28" font-weight="300" fill="#E2E4EC" letter-spacing="7">ORION</text>
+  <text x="420" y="38" font-family="'Courier New',monospace" font-size="8" fill="#3E4155" letter-spacing="0.5" font-style="italic">"Can you bind the chains of the Pleiades?"</text>
+  <text x="452" y="52" font-family="'Courier New',monospace" font-size="8" fill="#3E4155" letter-spacing="0.5" font-style="italic">— Job 38:31</text>
+</svg>
