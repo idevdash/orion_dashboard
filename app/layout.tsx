@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
+import ThemeToggle from '@/components/ThemeToggle'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className="bg-[var(--orion-bg)] dark"
+      className="bg-[var(--orion-bg)]"
     >
       <head>
         <script
@@ -49,12 +50,16 @@ document.documentElement.setAttribute('data-theme',t||'light');
       </head>
       <body className="font-sans antialiased min-h-screen bg-[var(--orion-bg)] text-[var(--orion-text)]">
         <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
-          enableSystem={false}
+          attribute="data-theme"
+          defaultTheme="light"
+          enableSystem
           disableTransitionOnChange
         >
+          <nav className="pointer-events-none fixed right-4 top-4 z-[1000]">
+            <div className="pointer-events-auto">
+              <ThemeToggle />
+            </div>
+          </nav>
           {children}
           {process.env.NODE_ENV === 'production' && <Analytics />}
         </ThemeProvider>
