@@ -1,23 +1,7 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
-
-const _geist = Geist({ 
-  subsets: ["latin"],
-  variable: '--font-geist-sans',
-});
-
-const _geistMono = Geist_Mono({ 
-  subsets: ["latin"],
-  variable: '--font-geist-mono',
-});
-
-const _jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: '--font-jetbrains-mono',
-});
 
 export const metadata: Metadata = {
   title: 'ORION | Institutional Trading Infrastructure',
@@ -46,8 +30,23 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${_geist.variable} ${_geistMono.variable} ${_jetbrainsMono.variable} bg-[var(--orion-bg)] dark`}
+      className="bg-[var(--orion-bg)] dark"
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+(function(){try{var t=localStorage.getItem('orion-theme');
+document.documentElement.setAttribute('data-theme',t||'light');
+}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+`,
+          }}
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-sans antialiased min-h-screen bg-[var(--orion-bg)] text-[var(--orion-text)]">
         <ThemeProvider
           attribute="class"
